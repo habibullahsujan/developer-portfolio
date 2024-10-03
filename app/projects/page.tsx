@@ -8,8 +8,10 @@ import AiSaasImg from '@/assets/images/Ai-saas.png'
 import event360Img from '@/assets/images/event-360.png'
 import blogSiteImg from '@/assets/images/blog-souce-img.png'
 import chocolateShopImg from '@/assets/images/chocolate-shop-frontend.png'
+import tourBooking from '@/assets/images/tour-booking.png'
+import rentCar from '@/assets/images/rent-car.png'
 import { StaticImageData } from 'next/image'
-type TCardProps={
+type TCardProps = {
   name: string,
   description: string,
   image: StaticImageData,
@@ -31,22 +33,24 @@ const Projects = () => {
     { name: 'Source Blog', description: "This is my personal blog page where i implement SEO and content writing.", image: blogSiteImg, technology: [], liveLink: "https://source-blog.vercel.app/", githubLink: 'https://github.com/habibullahsujan/source-log', category: ['design', 'front-end'] },
 
     { name: 'Chocolate Shop', description: "This is a chocolate shop front-end design i am now working on this project and implement backend and role based login and dashboard system.", image: chocolateShopImg, technology: [], liveLink: 'https://chocolate-shop-six.vercel.app', githubLink: 'https://github.com/habibullahsujan/chocolate-shop', category: ['design', 'front-end'] },
+    { name: 'Tour Book', description: "This is a tour company front-end design i am now working on this project and implement backend and role based login and dashboard system.", technology: ['nextJs, tailwind', 'nextAuth'], liveLink: 'https://dubai-tour-dashboard.vercel.app', githubLink: 'https://github.com/habibullahsujan/dubai-tour-app', category: ['design', 'front-end'], image: tourBooking },
+    { name: 'Rent Car', description: "This is car rental service company landing page.It is a responsive design", technology: ['nextJs, tailwind', 'nextAuth'], liveLink: 'https://car-rental-blush-six.vercel.app', githubLink: 'https://github.com/habibullahsujan/car-rental', category: ['design', 'front-end'], image: rentCar },
 
   ]
-  const [projects,setProjects]=useState<TCardProps[]| undefined>(projectsData)
-  const handleAllProjects=()=>{
+  const [projects, setProjects] = useState<TCardProps[] | undefined>(projectsData)
+  const handleAllProjects = () => {
 
     setProjects(projectsData)
 
   }
-  const handleFrontEndProjects=()=>{
-    setProjects(projectsData.filter(project=>project.category.includes('front-end')))
+  const handleFrontEndProjects = () => {
+    setProjects(projectsData.filter(project => project.category.includes('front-end')))
   }
-  const handleBackendProjects=()=>{
-    setProjects(projectsData.filter(project=>project.category.includes('back-end')))
+  const handleBackendProjects = () => {
+    setProjects(projectsData.filter(project => project.category.includes('back-end')))
   }
-  const handleFullStackProjects=()=>{
-    setProjects(projectsData.filter(project=>project.category.includes('full-stack')))
+  const handleFullStackProjects = () => {
+    setProjects(projectsData.filter(project => project.category.includes('full-stack')))
   }
   return (
     <section>
